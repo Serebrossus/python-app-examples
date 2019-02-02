@@ -1,7 +1,7 @@
 import json
 
 #loading json data.
-data = json.load('dictionary.json')
+data = json.load(open('dictionary.json'))
 
 #function for retriving definition
 def retrive_definition(word):
