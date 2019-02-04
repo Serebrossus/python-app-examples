@@ -1,8 +1,8 @@
 import json
 import difflib
-from difflib import SequenceMatcher
+from difflib import get_close_matches
 
-output = SequenceMatcher(None, 'rainn', 'rain').ratio()
+output = get_close_matches('rainn', ['rain', 'help', 'apple'], n=1, cutoff=0.75)
 print(output)
 
 #loading json data.
