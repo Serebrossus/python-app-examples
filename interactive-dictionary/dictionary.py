@@ -2,9 +2,6 @@ import json
 import difflib
 from difflib import get_close_matches
 
-output = get_close_matches('rainn', ['rain', 'help', 'apple'], n=1, cutoff=0.75)
-print(output)
-
 #loading json data.
 data = json.load(open('dictionary.json'))
 
@@ -21,8 +18,8 @@ def retrive_definition(word):
         return data[word.title()]
     elif word.upper() in data:
         return data[word.upper()]
-    else:
-        return 'the word does not exit, please double check it.'
+    elif len(get_close_matches(word, data.keys())) > 0:
+        return ('Did you mean %s instead?' % get_close_matches(word, data.keys())[0])
 
 #input for user
 word_user = input('Enter a word: ')
