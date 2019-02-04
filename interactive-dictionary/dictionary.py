@@ -1,4 +1,9 @@
 import json
+import difflib
+from difflib import SequenceMatcher
+
+output = SequenceMatcher(None, 'rainn', 'rain').ratio()
+print(output)
 
 #loading json data.
 data = json.load(open('dictionary.json'))
