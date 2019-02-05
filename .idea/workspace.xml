@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ece1b074-1c03-429b-b77c-708de7c5ee2b" name="Default Changelist" comment="if word has more than one deffinition, print them recursively">
+    <list default="true" id="ece1b074-1c03-429b-b77c-708de7c5ee2b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.directory" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/python-app-examples.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interactive-dictionary/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interactive-dictionary/.idea/interactive-dictionary.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interactive-dictionary/.idea/libraries/R_User_Library.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interactive-dictionary/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interactive-dictionary/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interactive-dictionary/.idea/vcs.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +21,6 @@
       <option value="directory" />
     </option>
   </component>
-  <component name="FileEditorManager">
-    <leaf />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -40,7 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="folium-map-app" />
+        <entry key="$PROJECT_DIR$" value="interactive-dictionary" />
       </map>
     </option>
   </component>
@@ -214,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549372723698</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cleaning">
+      <created>1549373015539</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1549373015539</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
