@@ -22,6 +22,7 @@ map = folium.Map(location=[37.296933-121.9574983], zoom_start=5, title='Mapbox b
 
 #create cluster
 marker_cluster = MarkerCluster().add_to(map)
+
 #Plot markers
 for lat, lon, elevation in zip(lat, lon, elevation):
     folium.CircleMarker(location=[lat, lon], radius=9, popup=str(elevation) + ' m', fill_color=color_change(elevation),
