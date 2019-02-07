@@ -2,7 +2,7 @@
 Application examples on python. Made to consolidate your knowledge
 
 
-#Add .idea to git ignore
+# Add .idea to git ignore
 * open cmd or terminal
 * go to project directory
 * enter commands
