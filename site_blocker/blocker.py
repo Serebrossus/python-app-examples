@@ -17,6 +17,16 @@ while True:
     #Check for the current time
     if dt(dt.now().year, dt.now().month, dt.now().day, 8) < dt.now():
         print("Work time")
+        #open file and read content
+        file = open(host_path, "r+")
+        content = file.read()
+        for website in website_list:
+            if website in content:
+                pass
+            else:
+                #write IP of localhost and name of website to block
+                file.write(redirect + " " + website + "\n")
+
     else:
         print("I am God")
 
