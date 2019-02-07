@@ -29,5 +29,15 @@ while True:
 
     else:
         print("I am God")
+        #Open hosts file and read content from it line by line
+        file = open(host_path, "r+")
+        content = file.readline()
+        #take back poonter to starting of file from end  of file
+        file.seek(0)
+        for line in content:
+            if not any(website in line for website in website_list):
+                file.writelines(line)
+            file.truncate()
+
 
     time.sleep(5)
