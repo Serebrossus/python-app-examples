@@ -1,5 +1,5 @@
 #import dependencies
-from flask import Flask
+from flask import Flask, render_template
 
 #create instance
 app = Flask(__name__)
@@ -9,12 +9,12 @@ app = Flask(__name__)
 
 #content
 def home():
-    return ("Home Page")
+    return render_template("home.html")
 
 #define 2 route
-@app.route('/about')
+@app.route('/blog')
 def about():
-    return ("About me")
+    return render_template("blog.html")
 
 #runnig and controlling script
 if(__name__ == "__main__"):
