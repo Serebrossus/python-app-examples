@@ -38,6 +38,9 @@ For work we need a library BeautifukSoup.
 pip install beautifulsoup4
 ```
 
+## Sockets (client, server)
+Simple example of implementing sockets (client, server) on python
+
 ### Add .idea to git ignore
 * open cmd or terminal
 * go to project directory
