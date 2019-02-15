@@ -41,6 +41,11 @@ pip install beautifulsoup4
 ## Parser
 An example of parsing a file. The data in the file corresponds to the user class.
 
+
+## Sockets (client, server)
+Simple example of implementing sockets (client, server) on python
+
+
 ### Add .idea to git ignore
 * open cmd or terminal
 * go to project directory
