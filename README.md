@@ -38,6 +38,9 @@ For work we need a library BeautifukSoup.
 pip install beautifulsoup4
 ```
 
+## Parser
+An example of parsing a file. The data in the file corresponds to the user class.
+
 ### Add .idea to git ignore
 * open cmd or terminal
 * go to project directory
