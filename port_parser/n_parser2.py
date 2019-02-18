@@ -1,7 +1,31 @@
 import socket
 import argparse
+import threading
+from queue import Queue
 
 checks = {}
+timeout = 4
+hostPort_queue = None
+
+
+def scanPort(host, port):
+    sock = socket.socket()
+    sock.settimeout(timeout)
+
+    try:
+        sock.connect((host, port))
+        checks[host + ":" + str(port)] = "up"
+    except:
+        checks[host + ":" + str(port)] = "down"
+
+    sock.close()
+
+
+def runner():
+    while 1:
+        host, port = hostPort_queue.get()
+        scanPort(host, port)
+        hostPort_queue.task_done()
 
 
 def parsePorts(buf):
@@ -29,19 +53,18 @@ if __name__ == '__main__':
     # set one port or ports list
     ports = parsePorts(args.p)
 
-    # create socket with params
+    hostPort_queue = Queue()
+
+    for _ in range(50):
+        thread = threading.Thread(target=runner())
+        thread.deamon = True
+        thread.start()
+
     for port in ports:
-        sock = socket.socket()
-        sock.settimeout(3)
+        hostPort_queue.put((target_ip, port))
 
-        try:
-            sock.connect((target_ip, port))
-        except:
-            checks[target_ip + ":" + str(port)] = "down"
-            continue
+    hostPort_queue.join()
 
-        checks[target_ip + ":" + str(port)] = "up"
-        sock.close()
 
     # print only 'up' ports
     for i in checks:
