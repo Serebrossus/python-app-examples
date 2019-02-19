@@ -4,14 +4,13 @@ import threading
 from queue import Queue
 
 checks = {}
-timeout = 4
+TIMEOUT = 5
 hostPort_queue = None
 
 
-def scanPort(host, port):
+def scan_port(host, port):
     sock = socket.socket()
-    sock.settimeout(timeout)
-
+    sock.settimeout(TIMEOUT)
     try:
         sock.connect((host, port))
         checks[host + ":" + str(port)] = "up"
@@ -24,15 +23,19 @@ def scanPort(host, port):
 def runner():
     while 1:
         host, port = hostPort_queue.get()
-        scanPort(host, port)
+        scan_port(host, port)
         hostPort_queue.task_done()
 
 
-def parsePorts(buf):
-    res = []
-
-    if "-" in buf:
-        res = [int(i) for i in range(int(buf.split("-")[0]), int(buf.split("-")[1]) + 1)]
+def parse_ports(buf):
+    # res = []
+    if '-' in buf:
+        split_buff = buf.split('-')
+        # asc sort list
+        custom_list = list(map(int, split_buff))
+        custom_list.sort()
+        # aka res.append(int(i))
+        res = [int(i) for i in range(int(custom_list[0]), int(custom_list[1]) + 1)]
     else:
         res = [int(buf)]
 
@@ -51,20 +54,22 @@ if __name__ == '__main__':
     args = init_parser().parse_args()
     target_ip = args.ip
     # set one port or ports list
-    ports = parsePorts(args.p)
+    ports = parse_ports(args.p)
+    # for debug
+    # for port in ports:
+    #     print('parsed port: ', port)
 
     hostPort_queue = Queue()
 
     for _ in range(50):
-        thread = threading.Thread(target=runner())
-        thread.deamon = True
+        thread = threading.Thread(target=runner)
+        thread.daemon = True
         thread.start()
 
     for port in ports:
         hostPort_queue.put((target_ip, port))
 
     hostPort_queue.join()
-
 
     # print only 'up' ports
     for i in checks:

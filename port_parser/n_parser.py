@@ -4,7 +4,7 @@ import argparse
 checks = {}
 
 
-def parsePorts(buf):
+def parse_ports(buf):
     res = []
 
     if "-" in buf:
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     args = init_parser().parse_args()
     target_ip = args.ip
     # set one port or ports list
-    ports = parsePorts(args.p)
+    ports = parse_ports(args.p)
 
     # create socket with params
     for port in ports:
