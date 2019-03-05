@@ -53,6 +53,13 @@ To run, you need to run the command:
 python image_metadata.py full_file_name
 ```
 
+## Parser
+An example of parsing a file. The data in the file corresponds to the user class.
+
+
+## Sockets (client, server)
+Simple example of implementing sockets (client, server) on python
+
 
 ### Add .idea to git ignore
 * open cmd or terminal
