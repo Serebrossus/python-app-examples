@@ -38,6 +38,21 @@ For work we need a library BeautifukSoup.
 pip install beautifulsoup4
 ```
 
+## Image Metadata
+Prepare:
+* open cmd or terminal
+* go to project directory
+* enter commands
+```
+pip install pillow
+```
+
+The script gets the metadata from the image. Displays a list of tags and their values.
+To run, you need to run the command:
+```
+python image_metadata.py full_file_name
+```
+
 ## Parser
 An example of parsing a file. The data in the file corresponds to the user class.
 
