@@ -38,6 +38,22 @@ For work we need a library BeautifukSoup.
 pip install beautifulsoup4
 ```
 
+## Image Metadata
+Prepare:
+* open cmd or terminal
+* go to project directory
+* enter commands
+```
+pip install pillow
+```
+
+The script gets the metadata from the image. Displays a list of tags and their values.
+To run, you need to run the command:
+```
+python image_metadata.py full_file_name
+```
+
+
 ### Add .idea to git ignore
 * open cmd or terminal
 * go to project directory
